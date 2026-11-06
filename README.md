@@ -71,5 +71,23 @@ Puis utiliser utiliser les commandes telles que
 (gdb) print led_state                       # Now shows opposite value
 (gdb) quit
 ```
+# Renode
+## Création d'une machine
+En charge un fichier binaire
+```
+mach create
+machine LoadPlatformDescription @platforms/cpus/miv.repl
+```
+Une fois que la machine est créée, on peut charger le binaire via : 
+```
+sysbus LoadELF @my-project.elf
+```
+
+## Description de la plateforme
+```
+```
+
+
+
 
 
