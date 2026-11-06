@@ -73,6 +73,14 @@ Puis utiliser utiliser les commandes telles que
 ```
 # Renode
 ## Création d'une machine
+```
+docker run -it --rm \
+  -e DISPLAY=host.docker.internal:0 \
+  --net=host \
+  -v "$(pwd)":/workspace \
+  antmicro/renode:latest
+```
+
 En charge un fichier binaire
 ```
 mach create
@@ -83,9 +91,17 @@ Une fois que la machine est créée, on peut charger le binaire via :
 sysbus LoadELF @my-project.elf
 ```
 
-## Description de la plateforme
+## Description de la plateforme .repl
 ```
+include @/workspace/fichier.repl
 ```
+Le fichier ayant une structure : 
+```
+uart0: UART.MiV_CoreUART @ sysbus 0x80000000
+    clockFrequency: 66000000
+sensor: Sensors.SI70xx @ i2c0 0x80
+```
+
 
 
 
