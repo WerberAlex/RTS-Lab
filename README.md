@@ -101,6 +101,32 @@ uart0: UART.MiV_CoreUART @ sysbus 0x80000000
     clockFrequency: 66000000
 sensor: Sensors.SI70xx @ i2c0 0x80
 ```
+Il est possible d'utiliser les fonctions associés avec les périphériques ou le cpu : 
+```
+sysbus.uart ReadByteNotTranslated 0
+cpu CyclesPerInstruction 0x000002
+```
+## Les fichiers de script .resc 
+Exemple : 
+```
+:name: nRF52840
+:description: This script runs Zephyr Shell demo on NRF52840.
+
+using sysbus
+
+mach create
+machine LoadPlatformDescription @platforms/cpus/nrf52840.repl
+
+$bin?=@https://dl.antmicro.com/projects/renode/renode-nrf52840-zephyr_shell_module.elf-gf8d05cf-s_1310072-c00fbffd6b65c6238877c4fe52e8228c2a38bf1f
+
+showAnalyzer uart0
+
+macro reset
+"""
+    sysbus LoadELF $bin
+"""
+runMacro $reset
+```
 
 
 
