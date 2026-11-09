@@ -1,0 +1,7 @@
+2026-11-08 11:16:24,554 - twister - INFO - Using Ninja..
+2026-11-08 11:16:29,133 - twister - INFO - Zephyr version: 916df03e7aec
+2026-11-08 11:16:29,184 - twister - DEBUG - Running cmake script /workdir/03-twister/zephyr/cmake/verify-toolchain.cmake
+2026-11-08 11:16:29,186 - twister - DEBUG - Calling cmake: /usr/bin/cmake -DFORMAT=json -P /workdir/03-twister/zephyr/cmake/verify-toolchain.cmake
+2026-11-08 11:16:30,734 - twister - DEBUG - Finished running /workdir/03-twister/zephyr/cmake/verify-toolchain.cmake
+2026-11-08 11:16:30,735 - twister - INFO - Using 'zephyr' toolchain.
+2026-11-08 11:16:31,013 - twister - DEBUG - Reading test case configuration files under /workdir/03-twister/button_led...

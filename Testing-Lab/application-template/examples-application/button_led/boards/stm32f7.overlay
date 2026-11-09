@@ -1,0 +1,7 @@
+/* LED verte LD1 (PI1) et bouton utilisateur B1 (PI11) de la carte. */
+/ {
+	aliases {
+		my-led = &green_led_1;
+		my-button = &user_button;
+	};
+};

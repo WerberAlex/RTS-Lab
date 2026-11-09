@@ -1,0 +1,9 @@
+tests:
+  shell.ztest.dynamic_cmd:
+    tags:
+      - shell
+      - ztest
+    harness: ztest
+    platform_allow: stm32f7
+    integration_platforms:
+      - stm32f7

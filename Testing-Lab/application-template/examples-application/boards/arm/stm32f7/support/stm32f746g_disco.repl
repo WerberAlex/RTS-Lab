@@ -60,6 +60,7 @@ rtc: Timers.STM32F4_RTC @ sysbus 0x40002800
     AlarmIRQ->nvic@41
 
 spi2: SPI.STM32SPI @ sysbus 0x40003800
+    series: STM32Series.F7
     IRQ->nvic@36
 
 timers3: Timers.STM32_Timer @ sysbus <0x40000400, +0x400>

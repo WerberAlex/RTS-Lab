@@ -1,0 +1,7 @@
+tests:
+  unit.button_led:
+    tags: gpio
+    platform_allow: stm32f7
+    integration_platforms:
+      - stm32f7
+    harness: ztest

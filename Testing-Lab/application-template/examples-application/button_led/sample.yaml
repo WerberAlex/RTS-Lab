@@ -1,0 +1,11 @@
+sample:
+  name: Button LED
+tests:
+  sample.button_led.robot:
+    tags: gpio
+    platform_allow: stm32f7
+    integration_platforms:
+      - stm32f7
+    harness: robot
+    harness_config:
+      robot_test_path: button_led.robot

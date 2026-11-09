@@ -1,0 +1,33 @@
+/*
+ * Tests unitaires : LED et bouton branchés sur un contrôleur GPIO émulé, que le test
+ * peut piloter (entrée du bouton) et lire (sortie de la LED).
+ */
+/ {
+	gpio_emul: gpio@800 {
+		compatible = "zephyr,gpio-emul";
+		reg = <0x800 0x4>;
+		gpio-controller;
+		#gpio-cells = <2>;
+		ngpios = <2>;
+		status = "okay";
+	};
+
+	test_leds {
+		compatible = "gpio-leds";
+		test_led: test_led {
+			gpios = <&gpio_emul 0 GPIO_ACTIVE_HIGH>;
+		};
+	};
+
+	test_buttons {
+		compatible = "gpio-keys";
+		test_button: test_button {
+			gpios = <&gpio_emul 1 GPIO_ACTIVE_HIGH>;
+		};
+	};
+
+	aliases {
+		my-led = &test_led;
+		my-button = &test_button;
+	};
+};
